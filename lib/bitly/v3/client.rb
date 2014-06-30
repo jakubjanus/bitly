@@ -8,6 +8,9 @@ module Bitly
       include HTTParty
       base_uri 'http://api.bitly.com/v3/'
 
+      # include apis methods
+      include Apis::Bundle
+
       # Requires a generic OAuth2 access token or -deprecated- login and api key.
       # http://dev.bitly.com/authentication.html#apikey
       # Generic OAuth2 access token: https://bitly.com/a/oauth_apps

@@ -2,9 +2,12 @@ require 'httparty'
 require 'cgi'
 require 'oauth2'
 
+require 'bitly/v3/apis/apis'
+
 require 'bitly/v3/bitly'
 require 'bitly/v3/client'
 require 'bitly/v3/url'
+require 'bitly/v3/bundle'
 require 'bitly/v3/referrer'
 require 'bitly/v3/day'
 require 'bitly/v3/country'
