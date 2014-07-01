@@ -3,7 +3,7 @@ module Bitly
     # Url objects should only be created by the client object as it collects the correct information
     # from the API.
     class Url
-      attr_reader :short_url, :long_url, :user_hash, :global_hash, :aggregate_link
+      attr_reader :short_url, :long_url, :user_hash, :global_hash, :aggregate_link, :link
 
       # Initialize with a bitly client and optional hash to fill in the details for the url.
       def initialize(client, opts={})
@@ -20,6 +20,7 @@ module Bitly
           @created_by = opts['created_by']
           @created_at = Time.at opts['created_at'] if opts['created_at']
           @aggregate_link = opts['aggregate_link']
+          @link = opts['link']
           @referrers = opts['referrers'].inject([]) do |results, referrer|
             results << Bitly::V3::Referrer.new(referrer)
           end if opts['referrers']

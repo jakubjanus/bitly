@@ -11,7 +11,7 @@ module Bitly
         @private            = options['private']
         @last_modified_ts   = options['last_modified_ts']
         @bundle_link        = options['bundle_link']
-        @linkes             = options['links'].map { |link_data| Bitly::V3::Url.new(nil, link_data) }
+        @links              = (options['links'] ? options['links'].map { |link_data| Bitly::V3::Url.new(nil, link_data) } : [])
       end
     end
   end
